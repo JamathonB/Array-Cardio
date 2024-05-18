@@ -21,3 +21,29 @@ const inventors = [
     'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
     'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
   ];
+
+// array.prototype.filter()
+// Filter the list of inventors for those who were born in the 1500's
+const fifteen = inventors.filter(function(inventor) {
+    if (inventor.year >= 1500 && inventor.year < 1600) {
+        return true;
+    } else {
+        return false;
+    }
+});
+console.table(fifteen);
+
+// array.prototype.map()
+// Give an array of the inventory first and last names
+const names = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+console.table(names);
+
+// array.prototype.sort()
+// Sort the inventors by birthdate, oldest to youngest
+const yearBorn = inventors.sort((a, b) => new Date(a.year) - new Date(b.passed));
+console.table(yearBorn);
+
+// array.prototype.reduce()
+// How many years did all the inventors live?
+
+
