@@ -75,3 +75,15 @@ const alpha = people.sort((lastOne, nextOne) => {
 });
 console.log(alpha);
 
+// Sum up the instances of these
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
+
+const dataCounts = data.reduce((acc, data) => {
+    if (acc[data]) {
+        acc[data]++;
+    } else {
+        acc[data] = 1;
+    }
+    return acc;
+}, {});
+console.log(dataCounts);
