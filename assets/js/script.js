@@ -45,5 +45,21 @@ console.table(yearBorn);
 
 // array.prototype.reduce()
 // How many years did all the inventors live?
+const totalYearsLived = inventors.reduce((total, inventor) => {
+const yearsLived = inventor.passed - inventor.year;
+return total + yearsLived;
+}, 0);
+console.log(totalYearsLived)
+
+// Sort the inventors by years lived
+const sortedYearsLived = inventors.sort((a, b) => {
+    const yearsLivedA = a.passed - a.year;
+    const yearsLivedB = b.passed - b.year;
+    return yearsLivedB - yearsLivedA;
+});
+console.table(sortedYearsLived);
+
+// Create a list of boulevards in Paris that contain 'de' anywhere in the name
+// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
 
